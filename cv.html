@@ -6,38 +6,49 @@
     <title>LI Yefeng's Curriculum Vitae</title>
     <style>
 body {
-  font-family: "Linux Libertine O", "Lora", "Times New Roman", "Times", serif;
-  max-width: 720px;
-  margin: 1em auto;
+  font-family: "Linux Libertine O", "Times New Roman", "Times", serif;
+  max-width: 750px;
+  margin: 0 auto 1em auto;
+}
+h1, address {
+  margin-block-start: 18px;
+  font-style: normal;
 }
 h2 {
   font-size: 1.2em;
   font-variant: small-caps;
   border-bottom: 1px solid;
 }
-main > section > section {
-  margin: 1em 1ch;
+main > section > section,
+main > section > p {
+  margin: 1em 2ch;
 }
 main section::after {
   content: "";
   display: block;
   clear: both;
 }
-main > section > section li {
+main > section li,
+main > section p {
   text-align: justify;
   font-size: 0.95em;
 }
+h1,
 main > section > section > *:nth-child(odd) {
   float: left;
   clear: left;
 }
+address,
 main > section > section > *:nth-child(even) {
   float: right;
   text-align: right;
   clear: right;
 }
+main#zh-Hans {
+  font-size: 0.95em;
+}
 *[lang="zh-Hans"] {
-  font-family: "Linux Libertine O", "Lora", "Times New Roman", "Times", "Noto Serif CJK SC", "Source Han Serif CN", "Source Han Serif SC", "FangSong", "STFangSong", serif;
+  font-family: "Noto Serif CJK SC", "Source Han Serif CN", "Source Han Serif SC", "FangSong", "STFangSong", serif;
 }
 *[lang="zh-Hans"] em,
 *[lang="zh-Hans"] address {
@@ -50,11 +61,16 @@ main > section > section > *:nth-child(even) {
   <body>
     <main id="en">
       <section>
-        <h1 style="float:left;margin-block-start:0.83em;">LI Yefeng (zh: <small lang="zh-Hans">李烨锋</small>)</h1>
-        <address style="float:right;text-align:right;margin-block-start:0.83em;font-style:normal;">
+        <h1>LI Yefeng (zh: <small lang="zh-Hans">李烨锋</small>)</h1>
+        <address>
           <a href="mailto:li3915@purdue.edu">li3915@purdue.edu</a><br>
           +852 56895775 or +86 13238191225
         </address>
+      </section>
+
+      <section>
+        <h2>Research Interests</h2>
+        <p>My research interests lie in the broad area of Programming Languages. I am interested in formal verification for distributed programming and for compilation, type systems, proof assistants, functional programming, etc. I hope to develope rigorously founded theories and tools in service of reliable software.</p>
       </section>
 
       <section>
@@ -63,60 +79,65 @@ main > section > section > *:nth-child(even) {
           <strong>Purdue University</strong>
           <span>West Lafayette, IN, USA</span>
           <em>Doctor of Philosophy student in Computer Science</em>
-          <em>Incoming</em>
+          <!-- <em>Incoming</em> -->
         </section>
         <section>
           <strong>Hong Kong University of Science and Technology (HKUST)</strong>
           <span>Hong Kong S.A.R.</span>
           <em>Master of Philosophy in Computer Science and Engineering</em>
-          <em>Sep. 2018 &ndash; June 2020</em>
-        </section>
-        <section>
-          <strong>Hong Kong University of Science and Technology</strong>
-          <span>Hong Kong S.A.R.</span>
-          <em>Bachelor of Engineering in Computer Engineering; Minor in Robotics</em>
-          <em>Sep. 2014 &ndash; June 2018</em>
+          <em>Sept. 2018 &ndash; June 2020</em>
+          <em>Bachelor of Engineering in Computer Engineering &#124; Minor in Robotics</em>
+          <em>Sept. 2014 &ndash; June 2018</em>
         </section>
       </section>
-      
+
       <section>
-        <h2>Research</h2>
+        <h2>Research Projects</h2>
         <section>
-          <strong>VisGraph Lab, CSE, HKUST</strong>
-          <span>Hong Kong</span>
-          <em>M.Phil. student; advised by Prof. Quan Long</em>
+          <strong>Manifoldness Preserving Contraction</strong>
+          <span>VisGraph Lab, CSE, HKUST</span>
+          <em>M.Phil. thesis, advised by Prof. Quan Long</em>
           <em>Aug. 2018 &ndash; May 2020</em>
           <ul>
-            <li><strong>Manifoldness Preserving Contraction</strong>: Designed a new contraction method that guarantees manifold output given a manifold input by augmentation and the separation of singularities. It can be applied to geometry processing as a replacement to the conventional contraction operation which may destroy topology.</li>
-            <li><strong>Triangle mesh simplification</strong>: Used new contraction techniques to improve triangle mesh simplification; facilitated the parallelization in Levels-of-Detail generating process using 2D-projection of tile boundaries.</li>
+            <li>Designed a new contraction method that guarantees manifold output given a manifold input by augmentation and the separation of singularities. It can be applied to geometry processing as a replacement to the conventional contraction operation which may destroy topology.</li>
           </ul>
         </section>
         <section>
-          <strong>HKUST</strong>
-          <span>Hong Kong</span>
-          <em>Undergraduate final-year student; advised by Prof. Brahim Bensaou</em>
-          <em>Sep. 2017 &ndash; Mar. 2018</em>
+          <strong>Triangle mesh simplification</strong>
+          <span>VisGraph Lab, CSE, HKUST</span>
+          <em>Advised by Prof. Quan Long</em>
+          <em>Aug. 2018 &ndash; May 2020</em>
           <ul>
-            <li><strong>Centralized Wireless Local Area Networks (Final-year thesis)</strong>: Specified a centralization protocol for Wireless LANs as an (software-defined networking) extension atop CSMA/CA to explore the improvement of resource utilization in dense indoor networks. It was partically implemented in C based on hostapd's source code and experimented on OpenWrt embedded Linux system.</li>
+            <li>Used new contraction techniques to improve triangle mesh simplification.</li>
+            <li>facilitated the parallelization in Levels-of-Detail generating process using 2D-projection of tile boundaries.</li>
           </ul>
         </section>
         <section>
-          <strong>VisGraph Lab, CSE, HKUST</strong>
-          <span>Hong Kong</span>
-          <em>Undergraduate Research Opportunity Program participant; advised by Prof. Quan Long</em>
+          <strong>Centralized Wireless Local Area Networks</strong>
+          <span>HKUST</span>
+          <em>Undergraduate final-year thesis, advised by Prof. Brahim Bensaou</em>
+          <em>Sept. 2017 &ndash; Mar. 2018</em>
+          <ul>
+            <li>Specified a centralization protocol for Wireless LANs as an (software-defined networking) extension atop CSMA/CA to explore the improvement of resource utilization in dense indoor networks. It was partially implemented in C based on hostapd's source code and experimented on OpenWrt embedded Linux system.</li>
+          </ul>
+        </section>
+        <section>
+          <strong>Photograph capturing with drones</strong>
+          <span>VisGraph Lab, CSE, HKUST</span>
+          <em>Undergraduate Research Opportunity Program, advised by Prof. Quan Long</em>
           <em>Aug. &ndash; Nov. 2016</em>
           <ul>
-            <li><strong>Photograph capturing with drones</strong>: Investigated in the application of Computer Vision and Graphics for Android devices as remote controls for drones, with a focus on human-drone interaction.</li>
+            <li>Investigated in the application of Computer Vision and Graphics for Android devices as remote controls for drones, with a focus on human-drone interaction.</li>
           </ul>
         </section>
       </section>
 
       <section>
-        <h2>Industrial</h2>
+        <h2>Professional Experience</h2>
         <section>
-          <strong>Everest Innovation Technology <small>(now acquired by Apple Inc.)</small></strong>
+          <strong>Everest Innovation Technology <small>(merged into Apple Inc.)</small></strong>
           <span>Shenzhen & Hong Kong, China</span>
-          <em>Researcher and Software Developer</em>
+          <em>Researcher & Software Developer</em>
           <em>June. &ndash; Aug. 2019</em>
           <ul>
             <li><strong>Triangle mesh processing</strong>: Transferred novel geometry processing techniques into <em>Altizure</em>, a world-class cloud-based 3D reconstruction platform; developed efficient mesh processing program in C++.</li>
@@ -136,23 +157,21 @@ main > section > section > *:nth-child(even) {
       </section>
 
       <section>
-        <h2>Teaching</h2>
+        <h2>Teaching Experience</h2>
         <section>
-          <strong>COMP1021: Introduction to Computer Science, HKUST</strong>
+          <strong>Department of Computer Science and Engineering, HKUST</strong>
           <span>Hong Kong</span>
           <em>Teaching Assistant</em>
-          <em>Sep. &ndash; Dec. 2019</em>
-        </section>
-        <section>
-          <strong>COMP3311: Database Management Systems, HKUST</strong>
-          <span>Hong Kong</span>
-          <em>Teaching Assistant</em>
-          <em>Sep. &ndash; Dec. 2018</em>
+          <em>2018 &ndash; 2019</em>
+          <ul>
+            <li>COMP1021: Introduction to Computer Science, Fall 2019</li>
+            <li>COMP3311: Database Management Systems, Fall 2018</li>
+          </ul>
         </section>
       </section>
 
       <section>
-        <h2>Extracurricular</h2>
+        <h2>Extracurricular Activities</h2>
         <section>
           <strong>ACM SIGPLAN Symposium on Principles of Programming Languages</strong>
           <span>New Orleans, LA, USA</span>
@@ -186,73 +205,83 @@ main > section > section > *:nth-child(even) {
 
     </main>
 
-    <main id="zh" lang="zh-Hans" style="display:none">
+    <main id="zh-Hans" lang="zh-Hans" style="display:none">
       <section>
-        <h1 style="float:left;letter-spacing:0.3ch;">李烨锋</h1>
-        <address style="float:right;text-align:right;margin-block-start:0.83em;">
+        <h1 style="letter-spacing:0.3ch">李烨锋</h1>
+        <address>
           <a href="mailto:li3915@purdue.edu">li3915@purdue.edu</a><br>
           +852 56895775 或 +86 13238191225
         </address>
       </section>
 
       <section>
-        <h2>教育</h2>
+        <h2>研究兴趣方向</h2>
+        <p>我对编程语言研究的众多课题深感兴趣，包括对分布式运算编程和软件编译的验证（Formal Verification）、类型系统（Type Systems）、证明助理（Proof Assistant）、函数式编程（Functional Programming）等。我的愿景是开发严禁的理论和工具用以创造各式完全可靠的软件。</p>
+      </section>
+
+      <section>
+        <h2>教育背景</h2>
         <section>
           <strong>普渡大学（Purdue University）</strong>
           <span>美国印第安纳州西拉法叶</span>
           <em>计算机科学哲学博士生</em>
-          <em>即将入学</em>
+          <!-- <em>即将入学</em> -->
         </section>
         <section>
           <strong>香港科技大学</strong>
           <span>香港特别行政区</span>
           <em>计算机科学与工程哲学硕士</em>
           <em>2018年9月&ndash;2020年6月</em>
-        </section>
-        <section>
-          <strong>香港科技大学</strong>
-          <span>香港特别行政区</span>
-          <em>计算机工程工程学学士；副修机器人学</em>
+          <em>计算机工程工程学学士｜副修机器人学</em>
           <em>2014年9月&ndash;2018年6月</em>
         </section>
       </section>
-      
+
       <section>
-        <h2>研究</h2>
+        <h2>研究项目</h2>
         <section>
-          <strong>香港科技大学计算机工程 VisGraph 实验室</strong>
-          <span>香港</span>
-          <em>硕士生；导师为权龙教授</em>
+          <strong>保存流形性质的单体收缩</strong>
+          <span>香港科技大学计算机工程 VisGraph 实验室</span>
+          <em>硕士论文，导师：权龙教授</em>
           <em>2018年8月&ndash;2020年5月</em>
           <ul>
-            <li><strong>保存流形性质的单体收缩（Manifoldness Preserving Contraction，硕士论文）</strong>：设计了一个新的单体（simplex）收缩方法来保证输入的流形复形（complex）在收缩后仍为流形。该方法使用了边缘补充以及奇点分裂的手段。这个收缩操作可以被应用在计算机几何处理上来取代时不时破坏拓扑结构的传统收缩操作。</li>
-            <li><strong>简化三角形三维网格</strong>: 利用了新设计的单体收缩操作来改善三角形三维网格简化的过程；利用了降低维度投影的办法来降低细节层次（LOD）平行运算难度以提升运算效率。</li>
+            <li>设计了一个新的单体（simplex）收缩方法来保证输入的流形（manifold）复形（complex）在收缩后仍为流形。该方法使用了边缘补充以及奇点分裂的手段。这个收缩操作可以被应用在计算机几何处理上来取代时不时破坏拓扑结构的传统收缩操作。</li>
           </ul>
         </section>
         <section>
-          <strong>香港科技大学</strong>
-          <span>香港</span>
-          <em>本科四年级生；导师为彭邵邦（Brahim Bensaou）教授</em>
+          <strong>简化三角形三维网格</strong>
+          <span>香港科技大学计算机工程 VisGraph 实验室</span>
+          <em>导师：权龙教授</em>
+          <em>2018年8月&ndash;2020年5月</em>
+          <ul>
+            <li>利用了新设计的单体收缩操作来改善三角形三维网格简化的过程。</li>
+            <li>利用了降低维度投影的办法来降低细节层次（LOD）平行运算难度以提升运算效率。</li>
+          </ul>
+        </section>
+        <section>
+          <strong>中央化无线局域网</strong>
+          <span>香港科技大学</span>
+          <em>本科四年级论文，导师：彭邵邦（Brahim Bensaou）教授</em>
           <em>2017年9月&ndash;2018年3月</em>
           <ul>
-            <li><strong>中央化无线局域网（Centralized Wireless LANs，本科论文）</strong>：设计了一个中央化无线局域网的协议，目的是增加室内密集网络环境下的网络资源的利用效率。此协议建立在 CSMA/CA 的基础上，包含中央控制器和无线接入点新的行为模式。用 C 在 hostapd 源代码的基础上部分地实现了此协议并且利用开源的 OpenWrt Linux 系统进行了实验。</li>
+            <li>设计了一个中央化无线局域网的协议，目的是增加室内密集网络环境下的网络资源的利用效率。此协议建立在 CSMA/CA 的基础上，包含中央控制器和无线接入点新的行为模式。用 C 在 hostapd 源代码的基础上部分地实现了此协议并且利用开源的 OpenWrt Linux 系统进行了实验。</li>
           </ul>
         </section>
         <section>
-          <strong>香港科技大学计算机工程 VisGraph 实验室</strong>
-          <span>香港</span>
-          <em>本科生研究计划参与者；导师为权龙教授</em>
+          <strong>无人机相片采集与应用</strong>
+          <span>香港科技大学计算机工程 VisGraph 实验室</span>
+          <em>本科生研究计划，导师：权龙教授</em>
           <em>2016年8月&ndash;11月</em>
           <ul>
-            <li><strong>无人机相片采集与应用</strong>：研究了无人机相机和计算机视觉及图形的交叉应用，在安卓平台开发了实现操作手和无人机的实时互动的软件程序。</li>
+            <li>研究了无人机相机和计算机视觉及图形的交叉应用，在安卓平台开发了实现操作手和无人机的实时互动的软件程序。</li>
           </ul>
         </section>
       </section>
 
       <section>
-        <h2>行业</h2>
+        <h2>行业经历</h2>
         <section>
-          <strong>珠科创新技术有限公司 <small>（现被苹果公司收购）</small></strong>
+          <strong>珠科创新技术有限公司 <small>（已并入苹果公司）</small></strong>
           <span>中国深圳与香港</span>
           <em>软件研发</em>
           <em>2019年6月&ndash;8月</em>
@@ -274,23 +303,21 @@ main > section > section > *:nth-child(even) {
       </section>
 
       <section>
-        <h2>授课</h2>
+        <h2>教学经历</h2>
         <section>
-          <strong>香港科技大学 COMP1021: Introduction to Computer Science</strong>
+          <strong>香港科技大学</strong>
           <span>香港</span>
           <em>助教</em>
-          <em>2019年9月&ndash;12月</em>
-        </section>
-        <section>
-          <strong>香港科技大学 COMP3311: Database Management Systems</strong>
-          <span>香港</span>
-          <em>助教</em>
-          <em>2019年9月&ndash;12月</em>
+          <em>2018年&ndash;2019年</em>
+          <ul>
+            <li>COMP1021: Introduction to Computer Science（2019 年秋季）</li>
+            <li>COMP3311: Database Management Systems（2018 年秋季）</li>
+          </ul>
         </section>
       </section>
 
       <section>
-        <h2>课外</h2>
+        <h2>课外活动</h2>
         <section>
           <strong>计算机协会 Principles of Programming Languages 论坛</strong>
           <span>美国路易斯安那州新奥尔良</span>
@@ -323,25 +350,31 @@ main > section > section > *:nth-child(even) {
       </section>
 
     </main>
-
-    <button id="lang-switch" style="position:fixed;right:1ch;top:1em;">
-    </button>
   </body>
   <script>
-var btn = document.getElementById("lang-switch");
-var mains = [document.getElementById("en"), document.getElementById("zh")];
-var labels = ["Display CV in English", "显示中文简历"];
-var titles = ["LI Yefeng's Curriculum Vitae", "李烨锋的简历"];
-var langs = ["en", "zh-Hans"]
-var lang = 0;
-btn.innerHTML = labels[1];
+let btn = document.createElement("button");
+btn.style.position = "fixed";
+btn.style.right = "1ch";
+btn.style.top = "1em";
+document.body.insertBefore(btn, null);
+let labels = ["Display CV in English", "显示中文简历"];
+let titles = ["LI Yefeng's Curriculum Vitae", "李烨锋的简历"];
+let langs = ["en", "zh-Hans"]
+let lang = 0;
+if (document.location.hash === "#zh-Hans") lang = 1;
+show();
 btn.onclick = () => {
-  mains[lang].style.display = "none";
-  mains[1-lang].style.display = "";
   lang = 1 - lang;
-  btn.innerHTML = labels[1-lang];
-  document.title = titles[lang];
-  document.documentElement.lang = langs[lang];
+  show();
 };
+function show() {
+  btn.innerHTML = labels[1-lang];
+  btn.setAttribute("title", labels[lang]);
+  document.title = titles[lang];
+  document.getElementById(langs[lang]).style.display = "";
+  document.getElementById(langs[1-lang]).style.display = "none";
+  document.documentElement.lang = langs[lang];
+  document.location.hash = "#" + langs[lang];
+}
   </script>
 </html>
