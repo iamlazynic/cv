@@ -23,7 +23,10 @@ h2 {
 }
 main > section > section,
 main > section > p {
-  margin: 1em 2ch;
+  margin: 0.618em 2ch;
+}
+main > section ul {
+  margin: 0.618em auto 0 auto;
 }
 main section::after {
   content: "";
@@ -46,6 +49,10 @@ main > section > section > *:nth-child(even) {
   text-align: right;
   clear: right;
 }
+address,
+main > section > section > em {
+  color: #333;
+}
 main#zh-Hans {
   font-size: 0.95em;
 }
@@ -56,7 +63,6 @@ main#zh-Hans {
 *[lang="zh-Hans"] address {
   font-family: "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, DFKai-SB, "TW\-Kai", serif;
   font-style: normal;
-  color: #333;
 }
     </style>
   </head>
@@ -88,7 +94,7 @@ main#zh-Hans {
           <span>Hong Kong S.A.R.</span>
           <em>Master of Philosophy in Computer Science and Engineering</em>
           <em>Sept. 2018 &ndash; June 2020</em>
-          <em>Bachelor of Engineering in Computer Engineering &#124; Minor in Robotics</em>
+          <em>Bachelor of Engineering in Computer Engineering <span style="font-style:normal">&#124;</span> Minor in Robotics</em>
           <em>Sept. 2014 &ndash; June 2018</em>
         </section>
       </section>
@@ -140,7 +146,7 @@ main#zh-Hans {
           <strong>Everest Innovation Technology <small>(merged into Apple Inc.)</small></strong>
           <span>Shenzhen & Hong Kong, China</span>
           <em>Researcher & Software Developer</em>
-          <em>June. &ndash; Aug. 2019</em>
+          <em>June &ndash; Aug. 2019</em>
           <ul>
             <li><strong>Triangle mesh processing</strong>: Transferred novel geometry processing techniques into <em>Altizure</em>, a world-class cloud-based 3D reconstruction platform; developed efficient mesh processing program in C++.</li>
             <li><strong>ZRPC</strong>: Participated in the development of <em>ZRPC</em>, an RPC distributed computing framework, in Go.</li>
@@ -357,7 +363,7 @@ btn.style.position = "fixed";
 btn.style.right = "1ch";
 btn.style.top = "1em";
 document.body.insertBefore(btn, null);
-let labels = ["Display CV in English", "显示中文简历"];
+let labels = ["CV in English", "中文简历"];
 let titles = ["Li Yefeng's Curriculum Vitae", "李烨锋的简历"];
 let langs = ["en", "zh-Hans"]
 let lang = 0;
@@ -367,8 +373,12 @@ btn.onclick = () => {
   lang = 1 - lang;
   show();
 };
+if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)
+  && window.innerHeight > window.innerWidth) {
+  alert("Orienting to landscape seems a good choice.");
+}
 function show() {
-  btn.innerHTML = labels[1-lang];
+  btn.innerHTML = `<span lang="${langs[1-lang]}">${labels[1-lang]}</span>`;
   btn.setAttribute("title", labels[lang]);
   document.title = titles[lang];
   document.getElementById(langs[lang]).style.display = "";
