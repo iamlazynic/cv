@@ -1,5 +1,4 @@
 # CV
 
-|            en            |              zh             |
-|:------------------------:|:---------------------------:|
-|![English version](cv.png)|![Chinese version](cv-zh.png)|
+* [English version](https://github.com/iamlazynic/cv/raw/master/cv.pdf)
+* [中文版](https://github.com/iamlazynic/cv/raw/master/cv-zh.pdf)
