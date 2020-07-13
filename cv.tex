@@ -1,0 +1,132 @@
+\documentclass[10pt]{article}
+
+\usepackage[letterpaper,total={7.2in,9.6in}]{geometry}
+\usepackage{xeCJK}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+
+% set font
+\setmainfont[Ligatures=TeX]{Linux Libertine O}
+% switch off page numbering
+\pagenumbering{gobble}
+% font size and rule for section heading
+\titleformat{\section}{\scshape\large}{\thesection}{1em}{}[{\titlerule[0.1pt]}]
+% font size of subsection heading
+\titleformat*{\subsection}{\normalsize\bfseries}
+% spacing around subsection heading
+\titlespacing\subsection{0pt}{10pt plus 2pt minus 1pt}{0pt}
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
+% remove vertical spacing between items
+\setlist{noitemsep}
+
+% subsection with additional text floating right
+\newcommand{\subsec}[2]{\subsection*{#1 \hfill {\normalfont #2}}}
+% a description line in kai font style
+\newcommand{\subsecdesc}[2]{{\em #1 \hfill #2}}
+
+
+\begin{document}
+
+\begin{center}
+{\bfseries
+  \LARGE LI Yefeng
+  \Large (李烨锋)
+}
+\vspace{4pt}
+
+{\small\ttfamily
+  \href{mailto:li3915@purdue.edu}{li3915@purdue.edu} \\
+  +86 13238191225 / +852 56895775
+}
+\end{center}
+
+\section*{Research Interests} %-------------------------------------------------
+
+  My research interests lie in the broad area of Programming Languages and Software Systems. I am interested in formal verification for distributed programming and for compilation, type systems, proof assistants, functional programming, and so on. I hope to develope rigorously founded theories and tools at the service of reliable software.
+
+\section*{Education} %----------------------------------------------------------
+
+  \subsec{Purdue University}{West Lafayette, IN, USA}
+  \subsecdesc{Doctor of Philosophy student in Computer Science}{}
+
+  \subsec{Hong Kong University of Science and Technology (HKUST)}{Hong Kong S.A.R.}
+  \subsecdesc{Master of Philosophy in Computer Science and Engineering}{Sept. 2018 -- June 2020} \\
+  \subsecdesc{Bachelor of Engineering in Computer Engineering {\normalfont |} Minor in Robotics}{Sept. 2014 -- June 2018}
+
+\section*{Research Projects} %--------------------------------------------------
+
+  \subsec{Manifoldness Preserving Contraction}{VisGraph Lab, CSE, HKUST}
+  \subsecdesc{M.Phil. thesis, advised by Prof. Quan Long}{Aug. 2018 -- May 2020}
+  \begin{itemize}
+    \item Designed a new contraction method that guarantees manifold output given a manifold input using augmentation and the separation of singularities. It can be applied to geometry processing as a replacement to the conventional contraction operation which may destroy topology and produce imperfect results.
+  \end{itemize}
+
+  \subsec{Triangle mesh simplification}{VisGraph Lab, CSE, HKUST}
+  \subsecdesc{Advised by Prof. Quan Long}{Aug. 2018 -- May 2020}
+  \begin{itemize}
+    \item Used new contraction techniques to improve triangle mesh simplification wherein traditional methods fail to effectively restrict the destruction of input topology.
+    \item Facilitated the parallelization in the construction of Levels-of-Detail of 3D models using 2D-projection of tile boundaries.
+  \end{itemize}
+
+  \subsec{Centralized Wireless Local Area Networks}{HKUST}
+  \subsecdesc{Undergraduate final-year thesis, advised by Prof. Brahim Bensaou}{Sept. 2017 -- Mar. 2018}
+  \begin{itemize}
+    \item Specified a centralization protocol for Wireless LANs as an (software-defined networking) extension atop CSMA/CA to explore the improvement of resource utilization in dense indoor networks. It was partially implemented in C based on hostapd's source code and experimented on OpenWrt embedded Linux system.
+  \end{itemize}
+
+  \subsec{Photograph capturing with drones}{VisGraph Lab, CSE, HKUST}
+  \subsecdesc{Undergraduate Research Opportunity Program, advised by Prof. Quan Long}{Aug. -- Nov. 2016}
+  \begin{itemize}
+    \item Investigated in the application of Computer Vision and Graphics for Android devices as remote controls for drones, with a focus on human-drone interaction. An Android application was built to retrieve data from a geography database and visualize useful information on the screen according to the vision of the drone.
+  \end{itemize}
+
+\section*{Professional Experience} %--------------------------------------------
+
+  \subsec{Everest Innovation Technology \small{(merged into Apple Inc.)}}{Shenzhen \& Hong Kong, China}
+  \subsecdesc{Researcher \& Software Developer}{June -- Aug. 2019}
+  \begin{itemize}
+    \item \textbf{Triangle mesh processing}: Transferred novel geometry processing techniques into \emph{Altizure}, a world-class cloud-based 3D reconstruction platform; developed efficient mesh processing program in C++.
+    \item \textbf{ZRPC}: Participated in the development of \emph{ZRPC}, an RPC distributed computing framework, in Go.
+    \item \textbf{Data management and visualization}: Developed a photographic data validation, management, and visualization desktop application in JavaScript.
+  \end{itemize}
+          
+  \subsec{Dash Serviced Suites}{Hong Kong}
+  \subsecdesc{Part-time JavaScript Developer}{Feb. -- May 2018}
+  \begin{itemize}
+    \item \textbf{Web development}: Worked on the Web interface, API, and database management of \emph{DASH2}, an online marketplace Web application by the startup company.
+  \end{itemize}
+
+\section*{Teaching Experience} %------------------------------------------------
+
+  \subsec{Department of Computer Science and Engineering, HKUST}{Hong Kong}
+  \subsecdesc{Teaching Assistant}{2018 -- 2019}
+  \begin{itemize}
+    \item COMP1021: Introduction to Computer Science, Fall 2019
+    \item COMP3311: Database Management Systems, Fall 2018
+  \end{itemize}
+
+\section*{Extracurricular Activities} %-----------------------------------------
+
+  \subsec{ACM SIGPLAN Symposium on Principles of Programming Languages}{New Orleans, LA, USA}
+  \subsecdesc{Student Volunteer}{Jan. 2020}
+  \begin{itemize}
+    \item Supported event organization.
+  \end{itemize}
+
+  \subsec{RoboMaster Robotics Competition}{Shenzhen, China}
+  \subsecdesc{Mechanical/Computer Engineer}{Feb. -- Aug. 2017}
+  \begin{itemize}
+    \item Co-designed the mechanical structure of \emph{Hero}, the main-force in this multi-robot contest, for RoboMaster HKUST team. Our Hero robot was controlled remotely, capable of capturing, storing and shooting bullets, and climbing onto stairs with telescopic legs.
+  \end{itemize}
+
+  \subsec{Chinese Folk-Art Society, HKUST}{Hong Kong}
+  \subsecdesc{IT Secretary, Executive Committee}{Feb. 2015 -- Feb. 2016}
+  \begin{itemize}
+    \item Independently built the official website of our society and developed a Web application in JavaScript to assist the hosting of a knowledge competition named \emph{Who is Still Standing}.
+    \item Took charge of photographing and Internet platform promotions.
+    \item Organized trips to the Yangzi, China and Dragon's Back, Hong Kong.
+  \end{itemize}
+
+\end{document}
