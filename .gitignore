@@ -16,3 +16,4 @@ Archieve/
 .*.lb
 *.bak
 *.synctex.gz
+*_latexmk
