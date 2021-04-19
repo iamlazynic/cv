@@ -1,72 +1,82 @@
-\documentclass[
-  10pt,           % font size
-  autoindent=0pt, % no indention at paragraph start
-  scheme=plain,   % scheme "chinese" centers section headings
-]{ctexart}
+\documentclass{article}
 
-\usepackage[letterpaper,total={7.2in,9.6in}]{geometry}
-\usepackage{titlesec}
-\usepackage[hidelinks]{hyperref}
-\usepackage{enumitem}
+\usepackage[letterpaper,total={7.2in,9.8in}]{geometry}
+\usepackage{luatexja-fontspec}
+\usepackage{datetime2}
+\usepackage{titlesec} % customize \section
+\usepackage{enumitem} % customize \enum
 
+% set fonts
+%   requires: installed fonts
+\setmainfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+\setmainjfont{Noto Serif CJK SC}
+\newjfontfamily\kaishu[Ligatures=TeX]{FandolKai}
 % switch off page numbering
 \pagenumbering{gobble}
-% font size and rule for section heading
-\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}[{\titlerule[0.1pt]}]
-% font size of subsection heading
+% font size and rule for section headings
+% spacing around subsection headings
+%   requires: titlesec
+\titleformat{\section}{\normalfont\large}{\thesection}{1em}{}[{\titlerule[0.1pt]}]
 \titleformat*{\subsection}{\normalsize\bfseries}
-% spacing around subsection heading
 \titlespacing\subsection{0pt}{10pt plus 2pt minus 1pt}{0pt}
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
 % remove vertical spacing between items
+%   requires: enumitem
 \setlist{noitemsep}
 
 % subsection with additional text floating right
-\newcommand{\subsec}[2]{\subsection*{#1 \hfill {\normalfont #2}}}
-% a description line in kai font style
-\newcommand{\subsecdesc}[2]{{\kaishu #1 \hfill #2}}
+\newcommand{\subsec}[2]{\subsection*{#1 \hfill {\normalfont\sffamily\kaishu #2}}}
+% a description line in italic
+\newcommand{\subsecdesc}[2]{{#1 \hfill\sffamily\kaishu #2}}
 
+\title{\bfseries 李烨锋}
+\author{
+  \normalsize\sffamily li3915@purdue.edu \\
+  \normalsize\sffamily +1 765-409-7247 \\
+  \normalsize\sffamily https://www.cs.purdue.edu/homes/li3915}
 
 \begin{document}
 
-\begin{center}
-{\LARGE\bfseries 李烨锋}
-\vspace{4pt}
+\maketitle
 
-{\small\ttfamily
-  \href{mailto:ylidb@cse.ust.hk}{ylidb@cse.ust.hk} \\
-  +86 13238191225 / +852 56895775
-}
-\end{center}
+\section*{研究方向} %-----------------------------------------------------------
+
+  我对编程语言、软件系统研究的众多课题深感兴趣，其中包括对分布式编程和程序编译的验证（formal verification）、类型系统（type systems）、证明助理（proof assistants）、函数式编程（functional programming）等等。我的愿景是用严谨的理论和工具创造完全可靠的计算机程序与软件系统。
 
 \section*{教育背景} %-------------------------------------------------------------
 
+  \subsec{普渡大学（Purdue University）}{美国印第安纳州西拉法叶}
+  \subsecdesc{计算机科学专业・哲学博士生}{2021年1月至今}
+
   \subsec{香港科技大学}{香港特别行政区}
-  \subsecdesc{计算机科学与工程哲学硕士}{2018年9月 -- 2020年6月} \\
-  \subsecdesc{计算机工程工程学学士｜副修机器人学}{2014年9月 -- 2018年6月}
+  \subsecdesc{计算机科学与工程专业・哲学硕士}{2018年9月至2020年6月} \\
+  \subsecdesc{计算机工程专业・工学学士｜副修机器人学}{2014年9月至2018年6月}
 
 \section*{研究项目} %-------------------------------------------------------------
 
   \subsec{保存流形性质的单体收缩}{香港科技大学 VisGraph 实验室}
-  \subsecdesc{硕士论文，导师：权龙教授}{2018年8月 -- 2020年5月}
+  \subsecdesc{硕士论文，导师：权龙教授}{2018年8月至2020年5月}
   \begin{itemize}
     \item 设计了一个新的单体（simplex）收缩方法来保证输入的流形（manifold）复形（complex）在收缩操作过后仍为流形。该方法使用边缘补充、奇点分裂等手段，可以被应用在计算机几何处理上以取代时不时破坏拓扑结构从而导致结果不佳的传统收缩操作。
   \end{itemize}
 
   \subsec{简化三角形三维网格}{香港科技大学 VisGraph 实验室}
-  \subsecdesc{导师：权龙教授}{2018年8月 -- 2020年5月}
+  \subsecdesc{导师：权龙教授}{2018年8月至2020年5月}
   \begin{itemize}
     \item 利用了新设计的单体收缩操作来改善三角形三维网格简化的过程，弥补传统简化程序无法无限制地破坏拓扑结构的缺陷。
     \item 用降低维度投影的办法来降低细节层次（LOD）平行运算难度，提升运算效率。
   \end{itemize}
 
   \subsec{中央化无线局域网}{香港科技大学}
-  \subsecdesc{本科四年级论文，导师：彭邵邦（Brahim Bensaou）教授}{2017年9月 -- 2018年3月}
+  \subsecdesc{本科四年级论文，导师：彭邵邦（Brahim Bensaou）教授}{2017年9月至2018年3月}
   \begin{itemize}
     \item 设计了一个中央化无线局域网的协议，目的是增加室内密集网络环境下的网络资源的利用效率。此协议建立在 CSMA/CA 的基础上，包含对中央控制器和无线接入点的行为模式的新定义。用 C 在 hostapd 源代码的基础上部分地实现了此协议并且利用开源的 OpenWrt Linux 系统进行了初步实验。
   \end{itemize}
 
   \subsec{无人机相片采集与应用}{香港科技大学 VisGraph 实验室}
-  \subsecdesc{本科生研究计划，导师：权龙教授}{2016年8月 -- 11月}
+  \subsecdesc{本科生研究计划，导师：权龙教授}{2016年8月至11月}
   \begin{itemize}
     \item 研究无人机相机和计算机视觉及图形的交叉应用，在安卓平台开发增进操作手和无人机的实时互动的软件应用，此应用可以链接地理模型数据库并结合无人机视野，将有价值的信息可视化在移动平台的屏幕上。
   \end{itemize}
@@ -74,23 +84,29 @@
 \section*{行业经历} %-------------------------------------------------------------
 
   \subsec{珠科创新技术有限公司 {\small （已并入苹果公司）}}{中国深圳与香港}
-  \subsecdesc{软件研发}{2019年6月 -- 8月}
+  \subsecdesc{软件研发}{2019年6月至8月}
   \begin{itemize}
     \item \textbf{三角形网格处理}：使用 C++ 开发高效率的网格处理程序，将对三角形网格处理的收缩操作等研究成果转移至 Altizure，一个领域内一流的、基于云计算的三维重建应用与平台。
     \item \textbf{ZRPC}：参与了使用 Go 语言的 ZRPC 分布式运算远程调用系统的开发。
     \item \textbf{相片数据管理、校验和可视化}：使用 JavaScript 开发了一个完整的桌面应用来管理、校验和可视化大量（无人机捕捉的）相片数据。
   \end{itemize}
-          
+
   \subsec{Dash Serviced Suites}{香港}
-  \subsecdesc{兼职JavaScript开发}{2018年2月 -- 5月}
+  \subsecdesc{兼职JavaScript开发}{2018年2月至5月}
   \begin{itemize}
     \item \textbf{Web 开发}：在 DASH2 项目中参与网页前端、API 以及数据库的开发，此项目是该创业公司的一个市场网页应用。
   \end{itemize}
 
 \section*{教学经历} %-------------------------------------------------------------
 
+  \subsec{普渡大学}{美国印第安纳州西拉法叶}
+  \subsecdesc{助教}{2021年至今}
+  \begin{itemize}
+    \item CS24000: Programming in C（2021年春季）
+  \end{itemize}
+
   \subsec{香港科技大学}{香港}
-  \subsecdesc{助教}{2018年 -- 2019年}
+  \subsecdesc{助教}{2018年至2019年}
   \begin{itemize}
     \item COMP1021: Introduction to Computer Science（2019 年秋季）
     \item COMP3311: Database Management Systems（2018 年秋季）
@@ -104,14 +120,14 @@
     \item 协助论坛活动的举办。
   \end{itemize}
 
-  \subsec{机甲大师赛}{中国深圳}
-  \subsecdesc{机械、计算机工程师}{2017年2月 -- 8月}
+  \subsec{RoboMaster 机甲大师赛}{中国深圳}
+  \subsecdesc{机械、计算机工程师}{2017年2月至8月}
   \begin{itemize}
     \item 与队友共同设计了香港科技大学参赛队伍在比赛中的主力机器人“英雄”的机械构造。英雄机器人可以由操作手远程操控来捕捉、发射弹丸，还可以用伸缩的腿部结构登岛。
   \end{itemize}
 
   \subsec{香港科技大学中国民间艺术坊}{香港}
-  \subsecdesc{执行委员会IT秘书}{2015年2月 -- 2016年2月}
+  \subsecdesc{执行委员会IT秘书}{2015年2月至2016年2月}
   \begin{itemize}
     \item 独立制作社团网站；用 JavaScript 开发了效仿“一站到底”的学生竞赛活动所需的网页应用。
     \item 负责拍照和互联网线上宣传。
