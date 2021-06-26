@@ -1,3 +1,12 @@
+% build with lualatex, pass options by
+%   lualatex "\def\option{1} \input{cv.tex}"
+% where  option  is one of
+%   includecoursework
+%   includeearlyexp
+%   includeextra
+%   enfontname
+%   zhfontname
+
 \documentclass[11pt]{article}
 
 \usepackage[letterpaper,total={7.2in,9.8in}]{geometry}
@@ -8,9 +17,10 @@
 
 % set fonts
 %   requires: fontspec, installed fonts
-\setmainfont{Linux Libertine O}
-\setsansfont{Linux Biolinum O}
-\newfontfamily\zhfont[Ligatures=TeX]{Noto Serif CJK SC}
+\providecommand{\enfontname}{STIX Two Text}
+\providecommand{\zhfontname}{Noto Serif CJK SC}
+\setmainfont{\enfontname}
+\newfontfamily\zhfont[Ligatures=TeX]{\zhfontname}
 % switch off page numbering
 \pagenumbering{gobble}
 % font size and rule for section headings
@@ -34,9 +44,8 @@
   \bfseries\underline{Li} Yefeng
   (\raisebox{-1pt}{\Large\zhfont 李烨锋})}
 \author{
-  \normalsize\sffamily li3915@purdue.edu \\
-  \normalsize\sffamily +1 765-409-7247 \\
-  \normalsize\sffamily https://www.cs.purdue.edu/homes/li3915}
+  \normalsize li3915@purdue.edu \\
+  \normalsize +1 765-409-7247}
 
 \begin{document}
 
@@ -44,56 +53,67 @@
 
 \section*{Research Interests} %-------------------------------------------------
 
-  My research interests lie in the broad area of Programming Languages and
-  Software Systems. I am interested in formal verification for distributed
-  programming and for compilation, type systems, proof assistants, functional
-  programming, and so on. I hope to develope rigorously founded theories and
-  tools at the service of reliable software.
+  My research interests lie in the broad area of Programming Languages:
+  theories of proofs, types, languages, and mathematics. I hope to develope
+  rigorously founded theories and tools at the service of software
+  reliability and human productivity.
 
 \section*{Education} %----------------------------------------------------------
 
   \subsec{Purdue University}
          {West Lafayette, IN, USA}
-  \subsecdesc{Doctor of Philosophy student in Computer Science}
-             {Jan. 2021--now}
+  \subsecdesc{Ph.D. student in Computer Science. Focus: programming languages}
+             {since 2021-01}
 
   \subsec{Hong Kong University of Science and Technology (HKUST)}
          {Hong Kong S.A.R.}
-  \subsecdesc{Master of Philosophy in Computer Science and Engineering}
-             {Sept. 2018--June 2020} \\
-  \subsecdesc{Bachelor of Engineering in Computer Engineering | Minor in Robotics}
-             {Sept. 2014--June 2018}
+  \subsecdesc{M.Phil. in Computer Science and Engineering}
+             {2018-09/2020-06} \\
+  \subsecdesc{B.Eng. in Computer Engineering | Minor in Robotics}
+             {2014-09/2018-06}
+
+\ifdefined\includecoursework
+\section*{Coursework} %----------------------------------------------------------
+
+  Reasoning about Programs,
+  Introduction to Advanced Algorithmic Techniques,
+  Introduction to Combinatorial Optimization,
+  Advanced Computer Graphics,
+  Copmuter Communication Networks,
+  System and Kernel Programming in Linux, etc.
+\fi
 
 \section*{Research Projects} %--------------------------------------------------
 
-  \subsec{Manifoldness Preserving Contraction}
+  \subsec{Probabilistic consistency model in distributed replicas}
+         {PurPL, CS, Purdue University}
+  \subsecdesc{Work in progress, advised by Prof. Suresh Jagannathan}
+             {since 2021-02}
+  \begin{itemize}
+    \item The goal of this research is to provide a framework that helps
+      distributed program developers identify a consistency model that
+      provide probabilistic (soft) guarantees. Methods employed include
+      probabilistic programming and Bayesian inference.
+  \end{itemize}
+
+  \subsec{Manifoldness preserving contraction}
          {VisGraph Lab, CSE, HKUST}
   \subsecdesc{M.Phil. thesis, advised by Prof. Quan Long}
-             {Aug. 2018--May 2020}
+             {2018-08/2020-05}
   \begin{itemize}
     \item Designed a new contraction method that guarantees manifold output
       given a manifold input using augmentation and the separation of
       singularities. It can be applied to geometry processing as a replacement
       to the conventional contraction operation which may destroy topology and
       produce imperfect results.
-  \end{itemize}
-
-  \subsec{Triangle mesh simplification}
-         {VisGraph Lab, CSE, HKUST}
-  \subsecdesc{Advised by Prof. Quan Long}
-             {Aug. 2018--May 2020}
-  \begin{itemize}
-    \item Used new contraction techniques to improve triangle mesh
-      simplification wherein traditional methods fail to effectively restrict
-      the destruction of input topology.
-    \item Facilitated the parallelization in the construction of
-      Levels-of-Detail of 3D models using 2D-projection of tile boundaries.
+    \item Applied the new contraction method to improve triangle mesh
+      simplification.
   \end{itemize}
 
   \subsec{Centralized Wireless Local Area Networks}
          {HKUST}
   \subsecdesc{Undergraduate final-year thesis, advised by Prof. Brahim Bensaou}
-             {Sept. 2017--Mar. 2018}
+             {2017-09/2018-03}
   \begin{itemize}
     \item Specified a centralization protocol for Wireless LANs as an
       (SDN) extension atop CSMA/CA to explore the
@@ -102,10 +122,11 @@
       on OpenWrt embedded Linux system.
   \end{itemize}
 
+\ifdefined\includeearlyexp
   \subsec{Photograph capturing with drones}
          {VisGraph Lab, CSE, HKUST}
   \subsecdesc{Undergraduate Research Opportunity Program, advised by Prof. Quan Long}
-             {Aug.--Nov. 2016}
+             {2016-08/2016-11}
   \begin{itemize}
     \item Investigated in the application of Computer Vision and Graphics for
       Android devices as remote controls for drones, with a focus on human-drone
@@ -113,13 +134,14 @@
       geography database and visualize useful information on the screen
       according to the vision of the drone.
   \end{itemize}
+\fi
 
 \section*{Professional Experience} %--------------------------------------------
 
   \subsec{Everest Innovation Technology \small{(merged into Apple Inc.)}}
          {Shenzhen \& Hong Kong, China}
-  \subsecdesc{Researcher \& Software Developer}
-             {June--Aug. 2019}
+  \subsecdesc{Researcher \& software developer}
+             {2019-06/2019-08}
   \begin{itemize}
     \item \textbf{Triangle mesh processing}: Transferred novel geometry
       processing techniques into \emph{Altizure}, a world-class cloud-based 3D
@@ -132,41 +154,38 @@
       JavaScript.
   \end{itemize}
 
+\ifdefined\includeearlyexp
   \subsec{Dash Serviced Suites}
          {Hong Kong}
-  \subsecdesc{Part-time JavaScript Developer}
-             {Feb.--May 2018}
+  \subsecdesc{Part-time JavaScript developer}
+             {2018-02/2018-05}
   \begin{itemize}
     \item \textbf{Web development}: Worked on the Web interface, API, and
       database management of \emph{DASH2}, an online marketplace Web application
       by the startup company.
   \end{itemize}
+\fi
 
 \section*{Teaching Experience} %------------------------------------------------
 
   \subsec{Department of Computer Science, Purdue University}
          {West Lafayette, IN, USA}
-  \subsecdesc{Teaching Assistant}
-             {2021--now}
-  \begin{itemize}
-    \item CS24000: Programming in C, Spring 2021
-  \end{itemize}
-
+  \subsecdesc{Teaching assistant for CS24000: Programming in C}
+             {Spring 2021}
   \subsec{Department of Computer Science and Engineering, HKUST}
          {Hong Kong}
-  \subsecdesc{Teaching Assistant}
-             {2018--2019}
-  \begin{itemize}
-    \item COMP1021: Introduction to Computer Science, Fall 2019
-    \item COMP3311: Database Management Systems, Fall 2018
-  \end{itemize}
+  \subsecdesc{Teaching assistant for COMP1021: Introduction to Computer Science}
+             {Fall 2019} \\
+  \subsecdesc{Teaching assistant for COMP3311: Database Management Systems}
+             {Fall 2018}
 
+\ifdefined\includeextra
 \section*{Extracurricular Activities} %-----------------------------------------
 
   \subsec{ACM SIGPLAN Symposium on Principles of Programming Languages}
          {New Orleans, LA, USA}
   \subsecdesc{Student Volunteer}
-             {Jan. 2020}
+             {2020-01}
   \begin{itemize}
     \item Supported event organization.
   \end{itemize}
@@ -174,7 +193,7 @@
   \subsec{RoboMaster Robotics Competition}
          {Shenzhen, China}
   \subsecdesc{Mechanical/Computer Engineer}
-             {Feb.--Aug. 2017}
+             {2017-02/2017-08}
   \begin{itemize}
     \item Co-designed the mechanical structure of \emph{Hero}, the main-force in
       this multi-robot contest, for RoboMaster HKUST team. Our Hero robot was
@@ -185,7 +204,7 @@
   \subsec{Chinese Folk-Art Society, HKUST}
          {Hong Kong}
   \subsecdesc{IT Secretary, Executive Committee}
-             {Feb. 2015--Feb. 2016}
+             {2015-02/2016-02}
   \begin{itemize}
     \item Independently built the official website of our society and developed
       a Web application in JavaScript to assist the hosting of a knowledge
@@ -193,5 +212,6 @@
     \item Took charge of photographing and Internet platform promotions.
     \item Organized trips to the Yangzi, China and Dragon's Back, Hong Kong.
   \end{itemize}
+\fi
 
 \end{document}
