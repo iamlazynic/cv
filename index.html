@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="An HTML vitae of Li Yefeng">
+    <meta name="author" content="Li Yefeng">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CV - Li Yefeng</title>
+    <style>
+/* layout */
+body {
+  font-family: "Linux Libertine O", "Times New Roman", Times, serif;
+  max-width: 750px;
+  margin: 0 auto 1em auto;
+  background: white;
+  color: black;
+}
+abbr {
+  font-variant: small-caps;
+}
+abbr[title] {
+  text-decoration: none;
+}
+abbr[title]:hover {
+  text-decoration: underline dotted;
+}
+h1, address {
+  margin-block-start: 18px;
+  font-style: normal;
+}
+h2 {
+  font-size: 1.2em;
+  font-variant: small-caps;
+  border-bottom: 1px solid;
+}
+main > section > section,
+main > section > p {
+  margin: 0.618em 2ch;
+}
+main > section ul {
+  margin: 0.618em auto 0 auto;
+}
+main section::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+main > section li,
+main > section p {
+  text-align: justify;
+  font-size: 0.95em;
+}
+h1,
+main > section > section > *:nth-child(odd) {
+  float: left;
+  clear: left;
+}
+address,
+main > section > section > *:nth-child(even) {
+  float: right;
+  text-align: right;
+  clear: right;
+}
+address,
+main > section > section > em {
+  color: #333;
+}
+
+a:link, a:visited {
+  color: blue;
+}
+
+main#zh-Hans {
+  font-size: 0.95em;
+}
+*[lang="zh-Hans"] {
+  font-family: "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "Source Han Serif CN", STSong, "AR PL New Sung", "AR PL SungtiL GB", NSimSun, SimSun, "TW\-Sung", "WenQuanYi Bitmap Song", "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", "AR PL UMing TW MBE", PMingLiU, MingLiU, serif;
+}
+*[lang="zh-Hans"] em,
+*[lang="zh-Hans"] address {
+  font-family: "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, DFKai-SB, "TW\-Kai", serif;
+  font-style: normal;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: white;
+  }
+  address,
+  main > section > section > em {
+    color: #ccc;
+  }
+  a:link, a:visited {
+    color: yellow;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <main lang="en-US">
+
+      <section>
+        <h1><ruby>Li,<rp>(</rp><rt>surname</rt><rp>)</rp></ruby> Yefeng (zh: <small lang="zh-Hans">李烨锋</small>)</h1>
+        <address>
+          <a href="mailto:career@lyfeng.xyz">career@lyfeng.xyz</a><br>
+          +44 7741524765
+        </address>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+
+        <section>
+          <strong>Purdue University</strong>
+          <span>West Lafayette, IN, USA</span>
+          <em>Doctor of Philosophy student in Computer Science</em>
+          <em>Jan. 2021 &ndash; June 2022 (exited)</em>
+        </section>
+
+        <section>
+          <strong>Hong Kong University of Science and Technology (HKUST)</strong>
+          <span>Hong Kong S.A.R.</span>
+          <em>Master of Philosophy in Computer Science and Engineering</em>
+          <em>Sept. 2018 &ndash; June 2020</em>
+          <em>Bachelor of Engineering in Computer Engineering <span style="font-style:normal">&#124;</span> Minor in Robotics</em>
+          <em>Sept. 2014 &ndash; June 2018</em>
+        </section>
+
+      </section> <!-- Education -->
+
+      <section>
+        <h2>Jobs</h2>
+
+        <section>
+          <strong>Garrison Technology Ltd.</strong>
+          <span>London, UK</span>
+          <em>Software Engineer</em>
+          <em>since Dec. 2022</em>
+          <ul>
+            <li>
+              Company background:
+              Centering around browsing in isolated environment to improve security.
+            </li>
+            <li>
+              Developed and implemented the keyboard and <abbr title="Input Method Editor">IME</abbr> input message protocol; implemented the remote keyboard (<abbr title="android open source project">aosp</abbr>) and the GUI clients (Win/Linux Qt, Android, iOS). This improvement upgraded our <i>Garrison App</i> from version 2 to 3.
+            </li>
+            <li>
+              Jointly maintained the remote chromium-fork browser; Led the new project building a desktop chromium-fork browser bundling security features targeting enterprises; Was chiefly responsible for its timely rebases.
+            </li>
+            <li>
+              Setup automated systems for various tasks including <abbr title="android open source project">aosp</abbr> security updates, end-to-end testing framework based on <abbr title="android debug bridge">adb</abbr>, GitLab CI of multiple projects.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <strong>Everest Innovation Technology <small>(merged into Apple Inc.)</small></strong>
+          <span>Shenzhen & Hong Kong, China</span>
+          <em>Researcher & Software Developer</em>
+          <em>June &ndash; Aug. 2019</em>
+          <ul>
+            <li>
+              Company background:
+              Offered <i>Altizure</i>, a 3D reconstruction platform computing 3D models from photo input.
+            </li>
+            <li>
+              Applied new geometry processing algorithms to <i>Altizure</i>, reducing processing time by 80%; The algorithms were gained from my concurrent M.Phil. research and implemented as a C++ mesh processing program.
+            </li>
+            <li>
+              Developed a desktop GUI tool in JavaScript that aids the team with photographic data validation, management, and visualization, to simplify our workflow.
+            </li>
+          </ul>
+        </section>
+
+      </section> <!-- Jobs -->
+
+      <section>
+        <h2>Research</h2>
+
+        <section>
+          <strong>Formal Verification of Distributed Systems</strong>
+          <span>PurPL, Purdue CS</span>
+          <em>Ph.D. research, advised by Prof. Suresh Jagannathan</em>
+          <em>Jan. 2021 &ndash; June 2022</em>
+          <ul>
+            <li>
+              Investigated methods to address the verification problem of complex distributed systems. Existing methods rely on over-simplified models of these systems. We proposed to use probabilistic models to describe such systems and to prove its strength guarantees using Proof Assistant <em>Coq</em>.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <strong>Manifoldness Preserving Contraction</strong>
+          <span>VisGraph Lab, HKUST CSE</span>
+          <em>M.Phil. thesis, advised by Prof. Quan Long</em>
+          <em>Aug. 2018 &ndash; May 2020</em>
+          <ul>
+            <li>
+              Designed a new contraction method that guarantees manifold output given a manifold input using augmentation and the separation of singularities. It can be applied to geometry processing as a replacement to the conventional contraction operation which may destroy topology and produce imperfect results.
+            </li>
+          </ul>
+        </section>
+
+      </section> <!-- Research -->
+
+      <section>
+        <h2>Extracurricular</h2>
+
+        <ul style="list-style: none;">
+          <li>
+            <strong>Teaching assistant</strong>
+            <span style="float: right; margin-inline-end: 1em;">Purdue & HKUST, 2018 &ndash; 2021</span>
+          </li>
+          <li>
+            <strong>ACM <abbr title="Principles of Programming Languages">POPL</abbr> Student volunteer</strong>
+            <span style="float: right; margin-inline-end: 1em;">New Orleans, 2020</span>
+          </li>
+          <li>
+            <strong>RoboMaster Robotics Competition</strong>
+            <span style="float: right; margin-inline-end: 1em;">Shenzhen, 2017</span>
+          </li>
+          <li>
+            <strong>Project Euler</strong>
+            <span style="float: right; margin-inline-end: 1em;"><a href="https://projecteuler.net">projecteuler.net (lyfeng)</a></span>
+          </li>
+          <li>
+            <strong>Open source</strong>
+            <span style="float: right; margin-inline-end: 1em;">
+              <a style="display: inline-block;" href="https://codereview.qt-project.org/q/author:dev@lyfeng.xyz">Qt (dev@lyfeng.xyz)</a>,
+              <a style="display: inline-block;" href="https://chromium-review.googlesource.com/q/author:dev@lyfeng.xyz">Chromium (dev@lyfeng.xyz)</a>,
+              <a style="display: inline-block;" href="https://github.com/l1yefeng">GitHub (l1yefeng)</a>
+            </span>
+          </li>
+        </ul>
+
+      </section> <!-- Extracurricular -->
+
+    </main>
+  </body>
+</html>
